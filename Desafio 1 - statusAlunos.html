@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 1</title>
+</head>
+
+<body>
+    <h1>Status Alunos</h1>
+</body>
+<script>
+    let alunos = [
+        ['Pedro', 3],
+        ['Maria', 4],
+        ['Juliana', 2],
+        ['Fernando', 2],
+        ['Rita', 1],
+        ['Roque', 5]
+    ]
+    let qtdDeAlunos = alunos.length;
+    let somaNotas = 0;
+    let status = null;
+    let notaMaxima = 5;
+
+    alunos.forEach(function (aluno) {
+        status = aluno[1] <= 3 ? 'Reforço' : 'Estágio';
+        somaNotas += aluno[1];
+        console.log(`Aluno: ${aluno[0]}, Taxa de acerto: ${(aluno[1] / notaMaxima) * 100}% Status: ${status}`);
+    })
+
+    let media = (somaNotas / qtdDeAlunos).toFixed(2);
+    console.log(`A média das notas desta turma é de: ${media}`);
+    console.log(`Taxa de acerto: ${((media / notaMaxima) * 100).toFixed(2)}%`)
+    console.log(`Aluno Sorteado: ${alunos[parseInt(Math.random() * qtdDeAlunos)][0]}`);
+</script>
+
+</html>

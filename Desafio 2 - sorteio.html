@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 2</title>
+</head>
+
+<body>
+    <h1>Sorteio</h1>
+</body>
+<script>
+    function jogo() {
+        let d1, d2, sorteio1, sorteio2, somarSorteios, tipoResultado, resultado, mensagem;
+        resultado = 0;
+        console.log(`Iniciando sorteio.`);
+        for (var i = 1; i <= 6; i++) {
+            for (var j = 1; j <= 2; j++) {
+                d1 = parseInt((Math.random() * 6) + 1);
+                d2 = parseInt((Math.random() * 6) + 1);
+
+                if (j == 1) {
+                    sorteio1 = d1 + d2
+                    console.log(`Rodada ${i} \n Sorteio ${j} \n Dado 1: ${d1} |Dado 2: ${d2} - Total: ${sorteio1}`)
+                } else {
+                    sorteio2 = d1 + d2;
+                    console.log(` Sorteio ${j} \n Dado 1: ${d1} |Dado 2: ${d2} - Total: ${sorteio2}`)
+                }
+            }
+            somarSorteios = sorteio1 + sorteio2;
+            tipoResultado = (somarSorteios % 2 == 0) ? true : false;
+            resultado = tipoResultado ? resultado += 1 : resultado;
+            tipoResultado = tipoResultado ? 'PAR' : 'ÍMPAR';
+
+            console.log(`Soma dos sorteios = ${somarSorteios} ${tipoResultado}`)
+            console.log(`==========================`)
+
+            if (i == 6 && resultado == 4) {
+                mensagem = 'Você ganhou!!';
+            } else {
+                mensagem = 'Não foi dessa Vez =(';
+            }
+            if (i == 6) {
+                console.log(`Resultado final: ${resultado}, ${mensagem}`);
+            }
+        }
+    }
+</script>
+
+</html>

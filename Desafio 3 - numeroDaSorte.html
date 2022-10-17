@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 3</title>
+</head>
+
+<body>
+    <h1>Jogo Número da SORTE</h1>
+</body>
+<script>
+    let numDaSorte, mensagem, tentativa;
+    tentativa = 1;
+
+    function sorteio(n) {
+        numDaSorte = parseInt(Math.random() * 10) + 1;
+
+        if (n == 1) {
+            return 'Um novo número foi sorteado, Boa sorte.'
+        } else {
+            return 'Número sorteado, Boa sorte.'
+        }
+    }
+
+    function verificaNumero(numero) {
+        console.log('Tentativa ' + tentativa)
+        if (numDaSorte == numero) {
+            mensagem = 'Parabéns você Acertou!!'
+            tentativa = 1;
+            return mensagem + ' ' + sorteio(tentativa);
+
+        } else if (numDaSorte < numero) {
+            mensagem = 'Tente um número menor.'
+        } else {
+            mensagem = 'Tente um número maior.'
+        }
+        tentativa++;
+
+        if (tentativa == 7) {
+            mensagem = 'Você Perdeu =/. O número era: ' + numDaSorte;
+            tentativa = 1;
+            return mensagem + '. ' + sorteio(tentativa);
+        }
+
+        return mensagem
+    }
+
+</script>
+
+</html>
+
