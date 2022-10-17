@@ -1,0 +1,8 @@
+Primeiro crie a pasta do repositório na sua máquina, clique com o direito e clique em GIT Bash
+
+1º cmd - "git init" - Para inicializar o GIT na pasta
+2º cmd - "git add '(. - Paratudo) ou (nome do arquivo.ext)"' - Preparando arquivos para serem "subidos" ao GitHub.
+3º cmd - "git commit -m "Nome do Commit"
+4º cmd - "git branch -M 'nome da branch que será comitada'"
+5º cmd - "git remote add origin 'link do repositório'" - Conectar o repositório do GitHub a sua pasta, origin eh nome da conexão
+6º cmd - "git push -u origin "nome branch"
