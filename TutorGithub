@@ -1,8 +1,17 @@
 Primeiro crie a pasta do repositório na sua máquina, clique com o direito e clique em GIT Bash
 
 1º cmd - "git init" - Para inicializar o GIT na pasta
-2º cmd - "git add '(. - Paratudo) ou (nome do arquivo.ext)"' - Preparando arquivos para serem "subidos" ao GitHub.
+2º cmd - "git add '(. - Paratudo) ou (nome do arquivo.ext)'" - Preparando arquivos para serem "subidos" ao GitHub.
 3º cmd - "git commit -m "Nome do Commit"
 4º cmd - "git branch -M 'nome da branch que será comitada'"
-5º cmd - "git remote add origin 'link do repositório'" - Conectar o repositório do GitHub a sua pasta, origin eh nome da conexão
-6º cmd - "git push -u origin "nome branch"
+5º cmd - "git remote add origin 'link do repositório' - Conectar o repositório do GitHub a sua pasta, origin eh nome da conexão
+6º cmd - "git push -u origin 'nome branch'"
+
+criando e alterando nova branch
+git checkout -b "nome da branch"
+saíra da atual branch e criará uma nova.
+git commit -m 'xxx'
+git push 'conexão (remote)' 'nome da branch'
+
+merge
+entre na branch que queira que receba a atualização digite - git merge 'nome da branch que entrará'
