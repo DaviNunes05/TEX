@@ -15,3 +15,5 @@ git push 'conexão (remote)' 'nome da branch'
 
 merge
 entre na branch que queira que receba a atualização digite - git merge 'nome da branch que entrará'
+
+pelo vs code
