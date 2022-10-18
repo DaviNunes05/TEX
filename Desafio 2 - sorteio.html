@@ -12,7 +12,7 @@
     <h1>Sorteio</h1>
 </body>
 <script>
-    function rolarDados(rodada,sorteio){
+    function rolarDados(sorteio){
         let d1 = parseInt((Math.random() * 6) + 1);
         let d2 = parseInt((Math.random() * 6) + 1);
         console.log(`Sorteio ${sorteio} \n Dado 1: ${d1} |Dado 2: ${d2} - Total: ${d1+d2}`);
@@ -25,8 +25,8 @@
         console.log(`Iniciando sorteio.`);
         for (var i = 1; i <= 6; i++) {
             console.log(`Rodada ${i}`);
-            sorteio1 = rolarDados(i,1);
-            sorteio2 = rolarDados(i,2);
+            sorteio1 = rolarDados(1);
+            sorteio2 = rolarDados(2);
             somarSorteios = sorteio1 + sorteio2;
             tipoResultado = (somarSorteios % 2 == 0) ? true : false;
             resultado = tipoResultado ? resultado += 1 : resultado;
