@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let numDaSorte, mensagem, tentativa, Numero;
+        tentativa = 1;
+
+        function sorteio(n) {
+            numDaSorte = parseInt(Math.random() * 10) + 1;
+
+            if (n == 1) {
+                return 'Um novo número foi sorteado, Boa sorte.'
+            } else {
+                return 'Número sorteado, Boa sorte.'
+            }
+        }
+
+        function verificaNumero(palpite) {
+            if (numDaSorte == palpite) {
+                mensagem = 'Parabéns você Acertou!!'
+                tentativa = 1;
+                alert(mensagem + ' ' + sorteio(tentativa));
+                palpite = prompt('Tentativa ' + tentativa + 'Digite seu número da sorte:');
+                verificaNumero(palpite)
+
+            } else if (numDaSorte < palpite) {
+                mensagem = 'Tente um número menor.';
+            } else {
+                mensagem = 'Tente um número maior.';
+            }
+
+            tentativa++;
+
+            if (tentativa == 7) {
+                alert('Você Perdeu =/. O número era: ' + numDaSorte);
+                tentativa = 1;
+                alert(sorteio(tentativa));
+            }
+
+            palpite = prompt('Tentativa ' + tentativa + ' ' + mensagem);
+            verificaNumero(palpite);
+        }
+
+        alert(sorteio());
+        palpite = prompt('Tentativa 1: Digite seu número da sorte:');
+        verificaNumero(palpite);
+    </script>
+</body>
+
+</html>
