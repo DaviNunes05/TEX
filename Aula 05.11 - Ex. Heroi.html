@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let dragoes, balas
+        
+        function magazine(){
+            return parseInt(Math.random() * 10);
+        }
+        
+        function geradorDragao(){
+            return parseInt(Math.random() * 6) + 1;
+        }
+        
+        dragoes = geradorDragao();
+        balas = magazine();
+
+        if (((balas/2) - dragoes) < 0) {
+            console.log(`Balas: ${balas}\nDragões: ${dragoes}\nStatus do Herói: Queimado.`);
+        }else{
+            console.log(`Balas: ${balas}\nDragões: ${dragoes}\nStatus do Herói: Venceu.`);
+        }
+    </script>
+</body>
+</html>

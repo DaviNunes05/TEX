@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function ordemDoArray(arrayNumerico) {
+            //arrayNumerico.sort();
+            let valorMenor = 1;
+
+            arrayNumerico.forEach((valor, i) => {
+                if (arrayNumerico[i + 1] != undefined) {
+                    valor <= arrayNumerico[i + 1] ? valorMenor++ : valorMenor = valorMenor;
+                }
+            });
+
+            return valorMenor == arrayNumerico.length ?
+                `O array está em ordem Crescente.\n${arrayNumerico}` :
+                `O Array está desordenado.\n${arrayNumerico}`;
+        }
+
+        function verificandoArray(array) {
+            let filtrandoNumeros,
+                divergencias = "";
+
+            filtrandoNumeros = array.map((valor, i) => {
+                if (isNaN(parseInt(valor))) {
+                    divergencias += `Índice: ${i} => (${valor}) é do tipo ${typeof(valor)}.\n`;
+                    return null;
+                }
+                return parseInt(valor);
+            }).filter(valor => typeof (valor) == "number");
+
+
+            if (divergencias != "") {
+                divergencias = divergencias.slice(0, divergencias.length - 1)
+                console.log(`Divergências encontradas: \n${divergencias}`)
+            }
+
+            if (filtrandoNumeros.length == 0) {
+                console.log("O array não é uma lista númerica.");
+            } else if (filtrandoNumeros.length != array.length) {
+                console.log("Um novo array de números foi criado.");
+            }
+
+            if (filtrandoNumeros != 0) {
+                return ordemDoArray(filtrandoNumeros);
+            }
+        }
+
+        ar = [3, 4, 5, 6]
+        arr = [1, 3, "Teste", 5 , "TEX"]
+        console.log(verificandoArray(ar))
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        let dias = [
+            "Segunda-feira",
+            "Terça-feira",
+            "Quarta-feira",
+            "Quinta-feira",
+            "Sexta-feira",
+            "Sábado",
+            "Domingo"
+        ];
+
+        function avancarDias(dia, quantidade) {
+            let posicaoInicial, total, resto, abreviandoDias;
+
+            abreviandoDias = dias.map((diaAtual) => {
+                return diaAtual.substring(0, 3).toLowerCase(); //Abreviando os dias e caixa baixa
+            });
+
+            if (typeof dia == "string") { //Verificando se é um texto
+                dia = dia.substring(0, 3).toLowerCase(); //Padronizando texto de entrada para 3 caracteres e caixa baixa 
+                posicaoInicial = abreviandoDias.indexOf(dia);
+
+                if (posicaoInicial == -1) { //Verificando se eh um dia da semana válido
+                    return 'Dia inválido';
+                };
+
+                total = posicaoInicial + quantidade;
+                resto = total % 7;
+                return dias[resto];
+            } else {
+                return 'O dia deve ser passado em forma de texto.';
+            }
+        }
+    </script>
+
+</body>
+
+</html>
